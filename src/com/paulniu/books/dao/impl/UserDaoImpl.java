@@ -43,8 +43,12 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
-    public User addUser(User user) {
-        return null;
+    public int addUser(User user) {
+        //1.定义sql
+        String sql = "insert into user values(null,?,?,?,?,?,?,?,null)";
+        //2.执行sql
+        int count  = template.update(sql, user.getUsername(), user.getPassword(), user.getNickname(), user.getBirthday(), user.getAddress(), user.getTelephone(),user.getEmail());
+        return count;
     }
 
     @Override

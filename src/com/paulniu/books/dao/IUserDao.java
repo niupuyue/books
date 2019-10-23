@@ -36,7 +36,7 @@ public interface IUserDao {
      * @param user
      * @return
      */
-    User addUser(User user);
+    int addUser(User user);
 
     /**
      * 删除用户
