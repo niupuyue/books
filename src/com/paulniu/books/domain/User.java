@@ -8,13 +8,13 @@ public class User {
     private String username;
     private String password;
     private String nickname;
-    private Date birthday;
+    private String birthday;
     private String address;
     private String telephone;
     private String email;
     private int cardid;
 
-    public User(int uid, String username, String password, String nickname, Date birthday, String address, String telephone, String email, int cardid) {
+    public User(int uid, String username, String password, String nickname, String birthday, String address, String telephone, String email, int cardid) {
         this.uid = uid;
         this.username = username;
         this.password = password;
@@ -61,11 +61,11 @@ public class User {
         this.nickname = nickname;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

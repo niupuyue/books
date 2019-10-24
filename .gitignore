@@ -1,0 +1,24 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# Compiled class files
+*.class
+
+# Log Files
+*.log
+
+# About IntelliJ
+*.iml
+/.idea/
+/out/
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# macOS
+.DS_Store
+
+out/
+

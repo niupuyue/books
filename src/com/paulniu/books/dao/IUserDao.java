@@ -36,17 +36,17 @@ public interface IUserDao {
      * @param user
      * @return
      */
-    User addUser(User user);
+    int addUser(User user);
 
     /**
      * 删除用户
      */
-    User deleteUser(User user);
+    int deleteUser(User user);
 
     /**
      * 根据用户名查找用户
      */
-    User findUserByName(String username);
+    List<User> findUserByName(String username);
 
 
 }
