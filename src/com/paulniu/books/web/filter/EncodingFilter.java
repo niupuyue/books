@@ -20,12 +20,9 @@ public class EncodingFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         // 获取请求方法
         String method = request.getMethod();
-        // 解决post请求中的中文乱码问题
-        if (method.equalsIgnoreCase("post")) {
-            request.setCharacterEncoding("utf-8");
-        }
-        // 处理相应乱码
-        response.setContentType("text/html;charset=utf-8");
+        // 解决中文乱码问题
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         filterChain.doFilter(request, response);
     }
 

@@ -20,6 +20,9 @@ public interface IUserService {
      */
     User login(User user);
 
-
+    /**
+     * 注册新用户
+     */
+    int regist(User user);
 
 }

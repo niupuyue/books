@@ -20,4 +20,9 @@ public class UserServiceImpl implements IUserService {
     public User login(User user) {
         return userDao.login(user.getUsername(),user.getPassword());
     }
+
+    @Override
+    public int regist(User user) {
+        return userDao.addUser(user);
+    }
 }
