@@ -7,6 +7,7 @@ import com.paulniu.books.util.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoImpl implements IUserDao {
@@ -52,12 +53,22 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
-    public User deleteUser(User user) {
-        return null;
+    public int deleteUser(User user) {
+        // 定义Sql语句
+        String sql = "delete from tab_users where userid = ?";
+        int count = template.update(sql,user.getUid());
+        return count;
     }
 
     @Override
-    public User findUserByName(String username) {
-        return null;
+    public List<User> findUserByName(String username) {
+        List<User> users = new ArrayList<>();
+        try {
+            String sql = "select * from tab_users where username like ?";
+            users = template.query(sql,new BeanPropertyRowMapper<User>(User.class), username);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return users;
     }
 }
